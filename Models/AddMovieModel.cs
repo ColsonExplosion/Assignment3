@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-
+//model to build the movies.
+//required fields
 namespace Assignment3.Models
 {
     public class AddMovieModel
     {
+        [Key]
+        [Required]
+        public int MovieId { get; set; }
+
         [Required]
         public string Category { get; set; }
 

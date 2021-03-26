@@ -2,34 +2,38 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewBag.Title = "Add a Movie";
+    ViewBag.Title = "Edit a Movie";
 }
-
-<!--view to add a movie-->
-
 @model Assignment3.Models.AddMovieModel
+<!--view to edit
+    pulls in movie that was passed in
+    -->
 
-<form asp-action="AddMovie" method="post" class="text-center">
+<form asp-action="Edit" method="post" class="text-center">
+    <div>
+        <label asp-for="MovieId">Movie Id:</label>
+        <input asp-for="@Model.MovieId" readonly />
+    </div>
     <div>
         <label asp-for="Category">Category:</label>
-        <input asp-for="Category" />
+        <input asp-for="@Model.Category" />
     </div>
     <div>
         <label asp-for="Title">Title:</label>
-        <input asp-for="Title" />
+        <input asp-for="@Model.Title" />
     </div>
     <div>
         <label asp-for="Year">Year:</label>
-        <input asp-for="Year" />
+        <input asp-for="@Model.Year" />
     </div>
     <div>
         <label asp-for="Director">Director:</label>
-        <input asp-for="Director" />
+        <input asp-for="@Model.Director" />
     </div>
     <div>
         <label asp-for="Rating">Rating:</label>
-        <select asp-for="Rating">
-            <option value="">Select One</option>
+        <select asp-for="@Model.Rating">
+            <option value=""></option>
             <option>G</option>
             <option>PG</option>
             <option>PG-13</option>
@@ -38,23 +42,28 @@
     </div>
     <div>
         <label asp-for="Edited">Edited?</label>
-        <select asp-for="Edited">
-            <option value="">Select One</option>
+        <select asp-for="@Model.Edited">
+            <option value=""></option>
             <option value="true">Yes</option>
             <option value="false">No</option>
         </select>
     </div>
     <div>
         <label asp-for="LentTo">Lent To:</label>
-        <input asp-for="LentTo" />
+        <input asp-for="@Model.LentTo" />
     </div>
     <div>
         <label asp-for="Notes">Notes:</label>
-        <input asp-for="Notes" />
+        <input asp-for="@Model.Notes" />
     </div>
 
     <div asp-validation-summary="All"></div>
 
-    <button type="submit" class="btn btn-primary">Submit Application</button>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
 
 </form>
+
+
+
+
+
